@@ -1,6 +1,4 @@
-function checkPrime(n) {
-    const num = Number(n);
-
+function checkPrime(num) {
     if(num < 2) return false;
 
     for(let i = 2; i <= Math.sqrt(num); i++){
@@ -30,8 +28,7 @@ function solution(numbers) {
     helper(set, '', visited, numbers, len);
 
     for(let el of set){
-        if(checkPrime(el)) answer.add(el);
+        if(checkPrime(el)) answer.add(Number(el));
     }
-    
     return answer.size;
 }
