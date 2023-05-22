@@ -71,3 +71,45 @@ function solution(expression) {
 // 7. 모든 연산이 끝나면 기존 answer와 비교하여 더 크면 덮어쓰기. 절대값 씌우는 거 잊지 말기.
 
 // tip : 연산기호가 원래 3개 뿐이라 그냥 경우의 수 만들고 시작해도 됐었음.. ^^
+
+// function calc(s, n1, n2) {
+//     switch(s){
+//         case '+':
+//             return +n1 + +n2;
+//         case '-':
+//             return +n1 - +n2;
+//         case '*':
+//             return +n1 * +n2;
+//     }
+// }
+
+// function solution(expression) {
+//     const split = expression.split(/(\+|\*|-)/);
+//     const n = split.filter((v) => !isNaN(v));
+//     const s = split.filter((v) => isNaN(v));
+//     let answer = 0;
+
+//     const priority = [ '-*+', '-+*', '*-+', '*+-', '+-*', '+*-' ];
+    
+//     // 연산 시작
+//     for(let i = 0; i < priority.length; i++){
+//         const copyN = [...n];
+//         const copyS = [...s];
+
+//         for(let j = 0; j < priority[i].length; j++){
+//             const symbol = priority[i][j];
+
+//             while(copyS.indexOf(symbol) > -1){
+//                 const pos = copyS.indexOf(symbol);
+                
+//                 const result = calc(symbol, copyN[pos], copyN[pos+1]);
+
+//                 copyN.splice(pos, 2, result);
+//                 copyS.splice(pos, 1);
+//             }
+//         }
+//         answer = Math.max(answer, Math.abs(copyN[0]));
+//     }
+    
+//     return answer;
+// }
