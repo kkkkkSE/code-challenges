@@ -1,6 +1,6 @@
 function solution(n, wires) {
     const obj = {};
-    const answer = Infinity;
+    let answer = Infinity;
 
     // 최초의 송전탑 연결 정보 객체 만들기
     for(let i = 1; i <= n; i++) obj[i] = [];
